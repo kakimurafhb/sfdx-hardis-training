@@ -33,7 +33,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>filterName</name>
-                    <value>All_Installations</value>
+                    <value>Open_Installations</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideActionBar</name>
@@ -49,13 +49,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:filterListCard</componentName>
                 <identifier>flexipage_filterListCard</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Status__c}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Completed</rightValue>
-                    </criteria>
-                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
