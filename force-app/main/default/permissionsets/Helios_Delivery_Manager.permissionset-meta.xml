@@ -16,11 +16,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Installation__c.Crew_Size__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Installation__c.External_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -31,7 +26,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Installation__c.Panels_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Installation__c.Roof_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Installation__c.Signed_Off_By__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
