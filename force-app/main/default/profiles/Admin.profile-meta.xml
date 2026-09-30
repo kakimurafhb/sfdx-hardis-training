@@ -7,9 +7,6 @@
     </applicationVisibilities>
     <custom>false</custom>
     <layoutAssignments>
-        <layout>Crew_Capacity__c-Crew Capacity Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Installation__c-Installation Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
