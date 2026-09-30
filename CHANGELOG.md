@@ -3,6 +3,15 @@
 What changed in the course, for learners and trainers. The course has no versions: each section is
 a day, newest first, and a change goes under the date of the day it is made.
 
+## 2026-09-30
+
+- **The course has a new address: <https://sfdx-hardis-training.github.io/>**, on its way to
+  sfdx-hardis-training.cloudity.com once the domain is in place. Every old link keeps working:
+  hardisgroupcom.github.io/sfdx-hardis-training now sends each page to the same page at the new
+  address, and still serves the badge records, the story records and the share cards themselves, so
+  a badge already claimed and a fork already made carry on as they are.
+- The language picker works on the new address. It held a link that only existed under the old one.
+
 ## 2026-09-29
 
 - Lab 1.6 shows the counts a learner gets today, 36 sent and 7 changed, in its text and its two comment pictures.
