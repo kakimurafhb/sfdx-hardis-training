@@ -139,8 +139,8 @@ the most useful thing on the page.
 
 1. **The banner** **(1)** says whether the simulated deployment succeeded
 2. **What would change** **(2)**. Not a list of your files: sfdx-hardis sends the whole package,
-   `manifest/package.xml`, and Salesforce answers how much of it differs: `34 sent to the org, 5
-   would change (1 created, 4 updated, 0 deleted, 29 unchanged)`. The one created is your field, and the
+   `manifest/package.xml`, and Salesforce answers how much of it differs: `36 sent to the org, 7
+   would change (1 created, 6 updated, 0 deleted, 29 unchanged)`. The one created is your field, and the
    updated ones include the layout and the two permission sets you changed
 3. **Apex coverage** **(3)**, against the target this project sets
 4. **Tickets** **(4)**, the stories it recognised in your branch name and commit messages, each
@@ -205,13 +205,15 @@ GitHub remembers the method you picked last, so check the button label before ev
 Then delete the branch. GitHub offers a button for it. A merged branch that stays around is one
 more thing in everyone's list for no benefit.
 
-!!! note "What the linter is for, since it had nothing to say"
+!!! note "What the linter is for, and why its comment can show a warning"
     MegaLinter reads the whole repository, not only your change, and reports anything that breaks
-    the project's quality rules. It found nothing here because this repository is clean. When it
-    does find something, it writes it on the Pull Request the same way the deployment check does,
-    and whether a finding fails the job is a choice the project makes in `.mega-linter.yml`. A job that
-    fails blocks the merge, like the deployment check.
-    Level 2 has a lab where one blocks you, on purpose.
+    the project's quality rules. It writes its verdict on the Pull Request the same way the
+    deployment check does. Your change broke none of them, so the check is green, and the comment
+    may still read **Success with warnings**, with a ⚠️ line for a linter the project keeps
+    non-blocking, such as the auditor of the GitHub Actions workflow files. Whether a finding fails
+    the job is a choice the project makes in `.mega-linter.yml`, and a job that fails blocks the
+    merge, like the deployment check. [Lab 2.5](../level-2-contributor-advanced/2-5-pass-code-quality-and-apex-test-coverage.md) has you meet one finding that only warns, and
+    one check that blocks.
 
 ### 5. Watch the real deployment
 
@@ -224,6 +226,10 @@ org yet" without leaving the editor.
 
 ![The DevOps Pipeline panel, with the deployment status on the arrow to the org](../../_assets/annotated/vscode/devops-pipeline--deployment-status.png)
 
+The picture was taken later in the course, with teammates' branches on the left of `integration`.
+Yours shows only `integration` and `uat`: the pill **(1)** on the arrow to the org is the part to look
+at.
+
 The pill is also a link: click it and GitHub opens on the log of that run, **Process Deployment
 (sfdx-hardis)**, which takes about three minutes. You do not need to read it today. It is there for
 the day something fails, and [Lab 3.3](../level-3-release-manager/3-3-deploy-to-integration-and-read-the-log.md) is the lab that reads one line by line.
@@ -233,8 +239,8 @@ When the deployment finishes, it writes a second comment on the Pull Request you
 ![The comment sfdx-hardis writes after the merge deployment](../../_assets/annotated/web/github-pr-deployed.png)
 
 1. **Deployment successful** **(1)**, and this time the org really changed
-2. **What changed** **(2)**, in the same shape as the check said it would: `5 changed` where the
-   check said `5 would change`
+2. **What changed** **(2)**, in the same shape as the check said it would: `7 changed` where the
+   check said `7 would change`
 3. **Quick Deploy** **(3)**. The merge job did not start from nothing. It released the validation
    the Pull Request check had already done, which is why it did not run the Apex tests a second
    time and why it took two minutes rather than five
@@ -319,6 +325,12 @@ is the original repository and not your fork (`github.com/my-username/sfdx-hardi
 A required check is still running, or it failed. Wait for it, or open it from the **Checks** tab,
 fix what it reports on your branch, and push again: the checks run again on their own. There is no
 way around it, and there is not meant to be.
+
+**A commit you did not make, `chore(megalinter): apply linters fixes`, is on your branch.**
+MegaLinter reformatted a file of your Pull Request and pushed the result. GitHub does not start the
+checks again for a commit its own robot pushed, so they are missing or red on it and the merge stays
+blocked. **Pull** in the **Source Control** panel to bring the robot's commit to your computer, then
+run **Training: Level 1 > Trigger my workflows**: a push of yours is what starts the checks again.
 
 **The deployment succeeds but the field is not in the org.**
 Look at the deployed components list in the comment. If the field is not there, it is not in
