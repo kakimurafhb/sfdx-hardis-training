@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -24,7 +23,7 @@
                 <field>Roof_Type__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Crew_Size__c</field>
             </layoutItems>
             <layoutItems>
@@ -46,10 +45,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Signed_Off_By__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Crew_Warning_Sent__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>
