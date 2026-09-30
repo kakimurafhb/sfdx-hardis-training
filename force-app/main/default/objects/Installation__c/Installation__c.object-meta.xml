@@ -163,7 +163,12 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Installations</pluralLabel>
-    <searchLayouts></searchLayouts>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Install_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Panels_Required__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
