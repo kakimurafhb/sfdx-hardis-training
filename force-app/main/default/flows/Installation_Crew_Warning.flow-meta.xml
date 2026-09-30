@@ -99,6 +99,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordUpdates>
+        <description>Suppress warning task upon subsequent changes to Installation record.</description>
         <name>Mark_Warning_Sent</name>
         <label>Mark Warning Sent</label>
         <locationX>0</locationX>
